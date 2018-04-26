@@ -1,8 +1,10 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.io.FileNotFoundException;
 
 public class MainMenu{
-	private static FirstArea area1 = new FirstArea();
+	private static NewPlayerChoices newPlayerChoices = new NewPlayerChoices();
 
     private static int playerStats[] = new int[6]; //lvl, exp, hp, armor, mana, attack
     private static String statMessages[] = new String[]{"Level ", "Exp   ", "HP    ", "Armor ", "Mana  ", "Attack"};
@@ -52,7 +54,7 @@ public class MainMenu{
 
         switch(userString.toLowerCase()){
             case "yes":
-                System.out.println("Good, let's begin...");
+                System.out.println("Good, let's begin...\n");
                 break;
             case "no":
                 playerStats[0] = 0;
@@ -60,13 +62,20 @@ public class MainMenu{
                 System.out.println("Level changed to 0.\nStats decreased by half.");
                 System.out.println("\nPlayer Stats:");
                 for(int x=0; x<6; x++) System.out.println(statMessages[x] + "   " + playerStats[x]);
-                System.out.println("\nDon't be greedy, or you will die.\nLet's begin.");
+                System.out.println("\nDon't be greedy, or you will die.\nLet's begin.\n");
                 break;
             default:
                 System.out.println("Invalid command. Please restart the game and try reading 'Help'.");
                 break;
         }
-        area1.areaDesc();
+        userString = "902390814823";
+        System.out.print("Enter any key to begin:\n");
+        userString = userInput.nextLine();
+        if(!"902390814823".equals(userString)){
+        	System.out.print("\n");
+			newPlayerChoices.dreamDesc();
+		}
+		else System.out.print("Game closing due to input error.");
     }
 
     public static void playerSetup(){
