@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class MainMenu{
+	private static FirstArea area1 = new FirstArea();
 
     private static int playerStats[] = new int[6]; //lvl, exp, hp, armor, mana, attack
     private static String statMessages[] = new String[]{"Level ", "Exp   ", "HP    ", "Armor ", "Mana  ", "Attack"};
@@ -65,6 +66,7 @@ public class MainMenu{
                 System.out.println("Invalid command. Please restart the game and try reading 'Help'.");
                 break;
         }
+        area1.areaDesc();
     }
 
     public static void playerSetup(){
