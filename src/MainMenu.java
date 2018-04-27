@@ -15,9 +15,13 @@ public class MainMenu{
 
         Scanner userInput = new Scanner(System.in);
 
+        System.out.println("\n-------------------\nWelcome to Drankor!\n-------------------\n");
         while(true){
 
-            System.out.println("\n1. New Game\n2. Continue\n3. Help\n");
+            System.out.println("\nWhat would you like to do?\n1. Start New Game\n2. Continue Old Game\n3. Get Help");
+
+            //Here I would like to add code that reads a text file for a number. A single number then it will dictate
+			//if the 4th option of the menu is available. (the outcome being "The dog has died" and never made available again.
 
             try {
                 userString = userInput.nextLine();
@@ -34,7 +38,7 @@ public class MainMenu{
                     System.out.println("Not available. Please only choose the New Game option for now.");
                     break;
                 case "3":
-                    System.out.println("This is Dankor, a text based game. If there are numbers, " +
+                    System.out.println("\nThis is Dankor, a text based game. If there are numbers, " +
                             "enter the number that corresponds with your desired action.\nIf there is a " +
                             "question without numbers, type your response (such as yes or no).");
                     break;
@@ -69,11 +73,11 @@ public class MainMenu{
                 break;
         }
         userString = "902390814823";
-        System.out.print("Enter any key to begin:\n");
+        System.out.print("Press the enter key.");
         userString = userInput.nextLine();
         if(!"902390814823".equals(userString)){
-        	System.out.print("\n");
-			newPlayerChoices.dreamDesc();
+        	System.out.print("Glad you know how to read.\n\n");
+			newPlayerChoices.choiceInterator();
 		}
 		else System.out.print("Game closing due to input error.");
     }
